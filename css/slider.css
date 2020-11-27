@@ -68,7 +68,7 @@
 .imgviewer{
 	
 	min-height: 700px;
-	height: 100%;
+	height: calc(100% + 27px);
 	background: no-repeat;
 	background-position: center center;
 	background-size: cover;
