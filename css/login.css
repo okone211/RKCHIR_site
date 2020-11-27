@@ -1,0 +1,260 @@
+ #base{
+	width:100%;
+	height:100%;
+	background-color:#6b71e4;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#subscribe,
+#login{
+    top: 0px;
+    width: 88%;
+    padding: 18px 6% 60px 6%;
+    margin: 0 0 35px 0;
+    background: #7b81f4;
+    border: 1px solid #7b81f4;
+
+    border-radius: 5px;
+}
+#login{
+    z-index: 22;
+}
+/**** текст ****/
+#wrapper h1{
+    font-size: 48px;
+    color: rgb(6, 106, 117);
+    padding: 2px 0 10px 0;
+    font-family: 'FranchiseRegular','Arial Narrow',Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+}
+ 
+/** На донный момент только webkit поддерживает background-clip:text; **/
+#wrapper h1{
+    background:white;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+ 
+#wrapper h1:after{
+    content:' ';
+    display:block;
+    width:100%;
+    height:2px;
+    margin-top:10px;
+    background:white;
+}
+/**** advanced input styling ****/
+/* placeholder */
+::-webkit-input-placeholder  {
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder{
+    color: rgb(190, 188, 188);
+    font-style: italic;
+}
+input {
+  outline: none;
+}
+
+/* все поля исключают submit и checkbox */
+#wrapper input:not([type="checkbox"]){
+    width: 92%;
+    margin-top: 4px;
+    padding: 10px 5px 10px 32px;
+    border: 1px solid rgb(178, 178, 178);
+    box-sizing : content-box;
+    border-radius: 3px;
+    transition: all 0.2s linear;
+}
+
+@font-face {
+    font-family: 'FontomasCustomRegular';
+    src: url('fonts/fontomas-webfont.eot');
+    src: url('fonts/fontomas-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/fontomas-webfont.woff') format('woff'),
+         url('fonts/fontomas-webfont.ttf') format('truetype'),
+         url('fonts/fontomas-webfont.svg#FontomasCustomRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+/** магический трюк! **/
+[data-icon]:after {
+    content: attr(data-icon);
+    font-family: 'FontomasCustomRegular';
+    color: rgb(106, 159, 171);
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    width: 30px;
+}
+
+/*стилизуем обе кнопки*/
+#wrapper p.button input{
+    width: 30%;
+    cursor: pointer;
+    background: #9966FF;
+    padding: 8px 5px;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border: 1px solid #8844FF;
+    transition: all 0.2s linear;
+}
+#wrapper p.button input:hover{
+    background: #8844FF;
+}
+#wrapper p.button input:active,
+#wrapper p.button input:focus{
+    background: #7733EE;
+    position: relative;
+    top: 1px;
+    border: 1px solid #8844FF;
+}
+p.login.button,
+p.signin.button{
+    text-align: right;
+    margin: 5px 0;
+}
+
+/* стилизуем чекбокс "запомнить меня"*/
+.keeplogin{
+    margin-top: -5px;
+}
+.keeplogin input,
+.keeplogin label{
+    display: inline-block;
+    font-size: 12px;
+	color: white;
+}
+.keeplogin input#loginkeeping{
+    margin-right: 5px;
+}
+.keeplogin label{
+    width: 80%;
+}
+
+p.change_link{
+    color: rgb(127, 124, 124);
+    left: 0px;
+    height: 20px;
+    width: 440px;
+    padding: 17px 30px 20px 30px;
+    font-size: 16px ;
+    text-align: right;
+    border-top: 1px solid rgb(219, 229, 232);
+    border-radius: 0 0  5px 5px;
+    background: rgb(225, 234, 235);
+    background: repeating-linear-gradient(-45deg,
+    rgb(247, 247, 247) ,
+    rgb(247, 247, 247) 15px,
+    rgb(225, 234, 235) 15px,
+    rgb(225, 234, 235) 30px,
+    rgb(247, 247, 247) 30px
+    );
+}
+#wrapper p.change_link a {
+    display: inline-block;
+    font-weight: bold;
+    background: rgb(247, 248, 241);
+    padding: 2px 6px;
+    color: rgb(29, 162, 193);
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid rgb(203, 213, 214);
+    transition: all 0.4s  linear;
+}
+#wrapper p.change_link a:hover {
+    color: rgb(57, 191, 215);
+    background: rgb(247, 247, 247);
+    border: 1px solid rgb(74, 179, 198);
+}
+#wrapper p.change_link a:active{
+    position: relative;
+    top: 1px;
+}
+#register{
+    z-index: 21;
+    opacity: 0;
+}
+
+#toregister:target ~ #wrapper #register,
+#tologin:target ~ #wrapper #login{
+    z-index: 22;
+    animation-name: fadeInLeft;
+    animation-delay: .1s;
+}
+
+.animate{
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+ 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#toregister:target ~ #wrapper #login,
+#tologin:target ~ #wrapper #register{
+    animation-name: fadeOutLeftBig;
+}
+ 
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+ 
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+.uname, .youpasswd{
+	color: white;
+}
+#login{
+	min-width:400px;
+}
+
+
+
+@media handheld or (max-width: 800px) {
+	body{
+		font-size:60px;
+	}
+	#wrapper{
+		height:100%;
+		width:100%;
+	}
+	#login{
+				height:100%;
+		width:100%;
+		min-width:100%;
+	}
+	.keeplogin label{
+		font-size:40px;
+	}
+	#wrapper p.button input{
+		font-size:60px;
+		transition: none;
+	}
+	#wrapper input:not([type="checkbox"]) {
+		font-size:40px;
+	}
+}

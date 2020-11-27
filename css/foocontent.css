@@ -1,0 +1,105 @@
+div.foocontent{
+	height: 100%;
+} 
+
+
+.footer{
+	padding: 50px;
+	font-size: 14px;
+	line-height: 1.15;
+}
+
+.container{
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 70px;
+}
+
+.footer .container{
+	display: flex;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.footer-logo-block{
+	width: 35%;
+}
+
+.footer-nav{
+	width: 35%;
+}
+
+.footer-contact{
+	width: 30%;
+}
+
+.footer__address{
+	    color: #d1dbe3;
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 45px;
+	margin-top: 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+}
+
+.address-line{
+	display: block;
+	white-space: nowrap;
+}
+
+.footer-nav ul li a {
+    color: #d1dbe3;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.39px;
+    line-height: 26px;
+}
+
+.footer__tel {
+	    color: #d1dbe3;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.footer__mail {
+    font-size: 14px;
+	color: #d1dbe3;
+    line-height: 30px;
+    text-decoration: none;
+}
+.github{
+	font-size: 14px;
+	color: #d1dbe3;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.footer-copy{
+	    color: #d1dbe3;
+}
+
+@media (max-width: 800px ) {
+    .footer-nav{
+		display:none;
+	}
+	.footer{
+		padding:20px;
+	}
+	.footer-logo-block{
+		width:45%;
+	}
+	.footer-contact{
+		width:45%;
+	}
+	.container{
+		padding: 0 20px;
+	}
+}
